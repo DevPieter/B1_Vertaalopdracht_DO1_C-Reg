@@ -106,7 +106,15 @@ namespace CSharpReg
                 }
                 else if (keuze == "2")
                 {
-                    // TODO: Afmaken
+                    Console.WriteLine("Uitvoeren terugbetaling");
+
+                    Console.WriteLine("Bedrag originele bon: ");
+                    decimal terugTeGeven = decimal.Parse(Console.ReadLine());
+
+                    Console.WriteLine("Reden retour: ");
+                    string reden = Console.ReadLine();
+
+                    dagTotaalTerug += terugTeGeven;
                 }
                 else if (keuze == "3")
                 {
