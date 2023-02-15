@@ -39,7 +39,7 @@ namespace CSharpReg
                     while (bestelKeuze != "9")
                     {
                         Console.WriteLine("========= BON MENU =========");
-                        Console.WriteLine("Bon " + aantalBonnen.ToString());
+                        Console.WriteLine("Bon " + aantalBonnen);
                         Console.WriteLine("1. Volwassene                     € 19,-");
                         Console.WriteLine("2. Kinderen tot 12jr              € 9,-");
                         Console.WriteLine("3. Familiepas (2x volw. 3x kind)  € 49");
@@ -54,45 +54,45 @@ namespace CSharpReg
 
                         if (bestelKeuze == "1")
                         {
-                            bonTotaal = bonTotaal + 19;
-                            bonString = bonString + "1x Volwassene                  € 19\r\n";
+                            bonTotaal += 19;
+                            bonString += "1x Volwassene                  € 19\r\n";
                         }
                         else if (bestelKeuze == "2")
                         {
-                            bonTotaal = bonTotaal + 9;
-                            bonString = bonString + "1x kind (tot 12jr)             € 9\r\n";
+                            bonTotaal += 9;
+                            bonString += "1x kind (tot 12jr)             € 9\r\n";
                         }
                         else if (bestelKeuze == "3")
                         {
-                            bonTotaal = bonTotaal + 49;
-                            bonString = bonString + "1x Familiepas                  € 49\r\n";
+                            bonTotaal += 49;
+                            bonString += "1x Familiepas                  € 49\r\n";
                         }
                         else if (bestelKeuze == "4")
                         {
-                            bonTotaal = bonTotaal + 4.50m;
-                            bonString = bonString + "1x Parkkaart                   € 4,50\r\n";
+                            bonTotaal += 4.50m;
+                            bonString += "1x Parkkaart                   € 4,50\r\n";
                         }
                         else if (bestelKeuze == "5")
                         {
-                            bonTotaal = bonTotaal + 6;
-                            bonString = bonString + "1x kinderwagen/bolderkarhuur   € 6\r\n";
+                            bonTotaal += 6;
+                            bonString += "1x kinderwagen/bolderkarhuur   € 6\r\n";
                         }
                         else if (bestelKeuze == "6")
                         {
-                            bonTotaal = bonTotaal + 9;
-                            bonString = bonString + "1x Parkeerdagkaart             € 9\r\n";
+                            bonTotaal += 9;
+                            bonString += "1x Parkeerdagkaart             € 9\r\n";
                         }
                         else if (bestelKeuze == "9")
                         {
-                            aantalBonnen = aantalBonnen + 1;
-                            dagTotaal = dagTotaal + bonTotaal;
+                            aantalBonnen += 1;
+                            dagTotaal += bonTotaal;
                             Console.WriteLine(bonString);
                             Console.WriteLine("======== BON TOTAAL ========");
-                            Console.WriteLine("Te betalen: " + bonTotaal.ToString());
+                            Console.WriteLine("Te betalen: " + bonTotaal);
                             Console.WriteLine("Betaald: ");
                             decimal betaald = decimal.Parse(Console.ReadLine());
                             decimal terug = bonTotaal - betaald;
-                            Console.WriteLine("Terug:     " + terug.ToString());
+                            Console.WriteLine("Terug:     " + terug);
                             Console.WriteLine("Druk op <ENTER> om door te gaan.");
                             Console.ReadLine();
                         }
@@ -113,6 +113,7 @@ namespace CSharpReg
 
                     Console.WriteLine("Reden retour: ");
                     string reden = Console.ReadLine();
+                    // Wordt nooit gebruikt?
 
                     dagTotaalTerug += terugTeGeven;
                 }
@@ -140,10 +141,10 @@ namespace CSharpReg
             Console.Clear();
             Console.WriteLine("Kassa klopt, programma wordt afgesloten.");
             Console.WriteLine("======== DAGTOTALEN ========");
-            Console.WriteLine("Aantal bonnen: " + aantalBonnen.ToString());
-            Console.WriteLine("Verkocht:      " + dagTotaal.ToString());
-            Console.WriteLine("Totaal retour: " + dagTotaalTerug.ToString());
-            Console.WriteLine("In kassa:      " + inKassa.ToString());
+            Console.WriteLine("Aantal bonnen: " + aantalBonnen);
+            Console.WriteLine("Verkocht:      " + dagTotaal);
+            Console.WriteLine("Totaal retour: " + dagTotaalTerug);
+            Console.WriteLine("In kassa:      " + inKassa);
             Console.WriteLine("============================");
         }
     }
