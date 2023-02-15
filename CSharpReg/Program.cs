@@ -28,7 +28,6 @@ namespace CSharpReg
                 Console.WriteLine("============================");
 
                 Console.WriteLine("Maak uw keuze en druk op <ENTER>.");
-
                 keuze = Console.ReadLine();
 
                 if (keuze == "1")
@@ -131,7 +130,7 @@ namespace CSharpReg
 
             Console.WriteLine("Hoeveel zit er nu in de kassa?");
             decimal inKassa = decimal.Parse(Console.ReadLine());
-            while (inKassa != (bedragInKassaBegin + dagTotaal - dagTotaalTerug))
+            while (inKassa != bedragInKassaBegin + dagTotaal - dagTotaalTerug)
             {
                 Console.WriteLine("Je hebt een kassaverschil! Tel de kassa opnieuw");
                 Console.WriteLine("Hoeveel zit er nu in de kassa?");
