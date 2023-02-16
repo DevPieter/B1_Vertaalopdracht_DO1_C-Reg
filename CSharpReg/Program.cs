@@ -112,7 +112,7 @@ namespace CSharpReg
                     decimal terugTeGeven = decimal.Parse(Console.ReadLine());
 
                     Console.WriteLine("Reden retour: ");
-                    redenenTerug += "\n" + Console.ReadLine();
+                    redenenTerug += "\n-" + Console.ReadLine();
 
                     dagTotaalTerug += terugTeGeven;
                 }
