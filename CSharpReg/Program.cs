@@ -16,6 +16,7 @@ namespace CSharpReg
             decimal dagTotaal = 0;
             int aantalBonnen = 0;
             decimal dagTotaalTerug = 0;
+            string redenenTerug = "";
 
             while (keuze != "9")
             {
@@ -111,8 +112,7 @@ namespace CSharpReg
                     decimal terugTeGeven = decimal.Parse(Console.ReadLine());
 
                     Console.WriteLine("Reden retour: ");
-                    string reden = Console.ReadLine();
-                    // Wordt nooit gebruikt?
+                    redenenTerug += "\n" + Console.ReadLine();
 
                     dagTotaalTerug += terugTeGeven;
                 }
@@ -122,6 +122,7 @@ namespace CSharpReg
                     Console.WriteLine("In kassa begin: " + bedragInKassaBegin);
                     Console.WriteLine("Verkocht:       " + dagTotaal);
                     Console.WriteLine("Retour:         " + dagTotaalTerug);
+                    Console.WriteLine("Redenen retour: " + redenenTerug);
                     Console.WriteLine("In kassa:       " + (bedragInKassaBegin + dagTotaal - dagTotaalTerug));
                     Console.WriteLine("Druk op <ENTER> om door te gaan.");
                     Console.ReadLine();
