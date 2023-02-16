@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CSharpReg
 {
@@ -16,7 +17,7 @@ namespace CSharpReg
             decimal dagTotaal = 0;
             int aantalBonnen = 0;
             decimal dagTotaalTerug = 0;
-            string redenenTerug = "";
+            var redenenTerug = new List<string>();
 
             while (keuze != "9")
             {
@@ -112,7 +113,7 @@ namespace CSharpReg
                     decimal terugTeGeven = decimal.Parse(Console.ReadLine());
 
                     Console.WriteLine("Reden retour: ");
-                    redenenTerug += "\n-" + Console.ReadLine();
+                    redenenTerug.Add(Console.ReadLine());
 
                     dagTotaalTerug += terugTeGeven;
                 }
@@ -122,7 +123,12 @@ namespace CSharpReg
                     Console.WriteLine("In kassa begin: " + bedragInKassaBegin);
                     Console.WriteLine("Verkocht:       " + dagTotaal);
                     Console.WriteLine("Retour:         " + dagTotaalTerug);
-                    Console.WriteLine("Redenen retour: " + redenenTerug);
+                    Console.WriteLine("Redenen retour: ");
+                    foreach (string reden in redenenTerug)
+                    {
+                        Console.WriteLine($"- {reden}");
+                    }
+
                     Console.WriteLine("In kassa:       " + (bedragInKassaBegin + dagTotaal - dagTotaalTerug));
                     Console.WriteLine("Druk op <ENTER> om door te gaan.");
                     Console.ReadLine();
