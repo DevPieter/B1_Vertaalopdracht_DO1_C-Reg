@@ -125,7 +125,9 @@ namespace CSharpReg
                     Console.WriteLine("Retour:         " + dagTotaalTerug);
                     Console.WriteLine("Redenen retour: ");
                     foreach (var reden in redenenTerug)
+                    {
                         Console.WriteLine($"- {reden}");
+                    }
 
                     Console.WriteLine("In kassa:       " + (bedragInKassaBegin + dagTotaal - dagTotaalTerug));
                     Console.WriteLine("Druk op <ENTER> om door te gaan.");
